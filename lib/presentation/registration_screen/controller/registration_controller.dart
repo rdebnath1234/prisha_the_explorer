@@ -1,12 +1,12 @@
 import 'package:riyadebnathdas_56313_s_application4/core/app_export.dart';
-import 'package:riyadebnathdas_56313_s_application4/presentation/iphone_14_15_pro_max_two_screen/models/iphone_14_15_pro_max_two_model.dart';
+import 'package:riyadebnathdas_56313_s_application4/presentation/registration_screen/models/registration_model.dart';
 import 'package:flutter/material.dart';
 
-/// A controller class for the Iphone1415ProMaxTwoScreen.
+/// A controller class for the RegistrationScreen.
 ///
-/// This class manages the state of the Iphone1415ProMaxTwoScreen, including the
-/// current iphone1415ProMaxTwoModelObj
-class Iphone1415ProMaxTwoController extends GetxController {
+/// This class manages the state of the RegistrationScreen, including the
+/// current registrationModelObj
+class RegistrationController extends GetxController {
   TextEditingController nameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
@@ -19,8 +19,7 @@ class Iphone1415ProMaxTwoController extends GetxController {
 
   TextEditingController countryController = TextEditingController();
 
-  Rx<Iphone1415ProMaxTwoModel> iphone1415ProMaxTwoModelObj =
-      Iphone1415ProMaxTwoModel().obs;
+  Rx<RegistrationModel> registrationModelObj = RegistrationModel().obs;
 
   @override
   void onClose() {

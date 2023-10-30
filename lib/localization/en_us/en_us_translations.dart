@@ -1,8 +1,8 @@
 final Map<String, String> enUs = {
-  // iPhone 14 & 15 Pro Max - One Screen
+  // Signin Screen
   "lbl_login": "Login", "lbl_or": "OR", "lbl_sign_up": "Sign Up",
 
-  // iPhone 14 & 15 Pro Max - Two Screen
+  // Registration Screen
   "lbl_country": "Country",
   "lbl_name": "Name",
   "lbl_phone_number": "Phone Number",
@@ -14,10 +14,10 @@ final Map<String, String> enUs = {
 
   // App navigation Screen
   "lbl_app_navigation": "App Navigation",
+  "lbl_registration": "Registration",
+  "lbl_signin": "Signin",
   "msg_check_your_app_s":
       "Check your app's UI from the below demo screens of your app.",
-  "msg_iphone_14_15_pro": "iPhone 14 & 15 Pro Max - One",
-  "msg_iphone_14_15_pro2": "iPhone 14 & 15 Pro Max - Two",
 
 // Network Error String
   "msg_network_err": "Network Error",

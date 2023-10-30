@@ -52,7 +52,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                               child: Column(children: [
                                 GestureDetector(
                                     onTap: () {
-                                      onTapIPhone1415ProMaxOne();
+                                      onTapSignin();
                                     },
                                     child: Container(
                                         decoration: AppDecoration.fillWhiteA,
@@ -63,8 +63,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                   padding: EdgeInsets.symmetric(
                                                       horizontal: 20.h,
                                                       vertical: 10.v),
-                                                  child: Text(
-                                                      "msg_iphone_14_15_pro".tr,
+                                                  child: Text("lbl_signin".tr,
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
@@ -83,7 +82,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                         ]))),
                                 GestureDetector(
                                     onTap: () {
-                                      onTapIPhone1415ProMaxTwo();
+                                      onTapRegistration();
                                     },
                                     child: Container(
                                         decoration: AppDecoration.fillWhiteA,
@@ -95,8 +94,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                                                       horizontal: 20.h,
                                                       vertical: 10.v),
                                                   child: Text(
-                                                      "msg_iphone_14_15_pro2"
-                                                          .tr,
+                                                      "lbl_registration".tr,
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: TextStyle(
@@ -117,23 +115,23 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                 ]))));
   }
 
-  /// Navigates to the iphone1415ProMaxOneScreen when the action is triggered.
+  /// Navigates to the signinScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the iphone1415ProMaxOneScreen.
-  onTapIPhone1415ProMaxOne() {
+  /// push the named route for the signinScreen.
+  onTapSignin() {
     Get.toNamed(
-      AppRoutes.iphone1415ProMaxOneScreen,
+      AppRoutes.signinScreen,
     );
   }
 
-  /// Navigates to the iphone1415ProMaxTwoScreen when the action is triggered.
+  /// Navigates to the registrationScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the iphone1415ProMaxTwoScreen.
-  onTapIPhone1415ProMaxTwo() {
+  /// push the named route for the registrationScreen.
+  onTapRegistration() {
     Get.toNamed(
-      AppRoutes.iphone1415ProMaxTwoScreen,
+      AppRoutes.registrationScreen,
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'controller/iphone_14_15_pro_max_two_controller.dart';
+import 'controller/registration_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:riyadebnathdas_56313_s_application4/core/app_export.dart';
 import 'package:riyadebnathdas_56313_s_application4/core/utils/validation_functions.dart';
@@ -6,9 +6,8 @@ import 'package:riyadebnathdas_56313_s_application4/widgets/custom_elevated_butt
 import 'package:riyadebnathdas_56313_s_application4/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
-class Iphone1415ProMaxTwoScreen
-    extends GetWidget<Iphone1415ProMaxTwoController> {
-  Iphone1415ProMaxTwoScreen({Key? key}) : super(key: key);
+class RegistrationScreen extends GetWidget<RegistrationController> {
+  RegistrationScreen({Key? key}) : super(key: key);
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -122,13 +121,13 @@ class Iphone1415ProMaxTwoScreen
                         ])))));
   }
 
-  /// Navigates to the iphone1415ProMaxOneScreen when the action is triggered.
+  /// Navigates to the signinScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
-  /// push the named route for the iphone1415ProMaxOneScreen.
+  /// push the named route for the signinScreen.
   onTapRegister() {
     Get.toNamed(
-      AppRoutes.iphone1415ProMaxOneScreen,
+      AppRoutes.signinScreen,
     );
   }
 }
