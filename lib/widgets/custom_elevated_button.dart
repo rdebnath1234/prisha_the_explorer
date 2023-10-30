@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riyadebnathdas_56313_s_application4/core/app_export.dart';
-import 'package:riyadebnathdas_56313_s_application4/widgets/base_button.dart';
+import 'package:prisha_the_explorer/core/app_export.dart';
+import 'package:prisha_the_explorer/widgets/base_button.dart';
 
 class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({

@@ -1,8 +1,8 @@
 import 'controller/signin_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:riyadebnathdas_56313_s_application4/core/app_export.dart';
-import 'package:riyadebnathdas_56313_s_application4/widgets/custom_elevated_button.dart';
-import 'package:riyadebnathdas_56313_s_application4/widgets/custom_text_form_field.dart';
+import 'package:prisha_the_explorer/core/app_export.dart';
+import 'package:prisha_the_explorer/widgets/custom_elevated_button.dart';
+import 'package:prisha_the_explorer/widgets/custom_text_form_field.dart';
 
 class SigninScreen extends GetWidget<SigninController> {
   const SigninScreen({Key? key}) : super(key: key);

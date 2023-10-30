@@ -1,9 +1,9 @@
 import 'controller/registration_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:riyadebnathdas_56313_s_application4/core/app_export.dart';
-import 'package:riyadebnathdas_56313_s_application4/core/utils/validation_functions.dart';
-import 'package:riyadebnathdas_56313_s_application4/widgets/custom_elevated_button.dart';
-import 'package:riyadebnathdas_56313_s_application4/widgets/custom_text_form_field.dart';
+import 'package:prisha_the_explorer/core/app_export.dart';
+import 'package:prisha_the_explorer/core/utils/validation_functions.dart';
+import 'package:prisha_the_explorer/widgets/custom_elevated_button.dart';
+import 'package:prisha_the_explorer/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class RegistrationScreen extends GetWidget<RegistrationController> {

@@ -1,5 +1,5 @@
-import 'package:riyadebnathdas_56313_s_application4/core/app_export.dart';
-import 'package:riyadebnathdas_56313_s_application4/presentation/signin_screen/models/signin_model.dart';
+import 'package:prisha_the_explorer/core/app_export.dart';
+import 'package:prisha_the_explorer/presentation/signin_screen/models/signin_model.dart';
 import 'package:flutter/material.dart';
 
 /// A controller class for the SigninScreen.

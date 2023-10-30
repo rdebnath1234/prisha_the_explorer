@@ -10,7 +10,7 @@
 
 
     <application
-        android:label="riyadebnathdas_56313_s_application4"
+        android:label="prisha_the_explorer"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
