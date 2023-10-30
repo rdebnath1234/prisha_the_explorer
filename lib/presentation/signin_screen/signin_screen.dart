@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:prisha_the_explorer/core/app_export.dart';
 import 'package:prisha_the_explorer/widgets/custom_elevated_button.dart';
 import 'package:prisha_the_explorer/widgets/custom_text_form_field.dart';
+import 'package:prisha_the_explorer/domain/googleauth/google_auth_helper.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:prisha_the_explorer/domain/facebookauth/facebook_auth_helper.dart';
+import 'package:prisha_the_explorer/domain/facebookauth/facebook_user.dart';
 
 class SigninScreen extends GetWidget<SigninController> {
   const SigninScreen({Key? key}) : super(key: key);
@@ -49,7 +53,11 @@ class SigninScreen extends GetWidget<SigninController> {
                                     textInputAction: TextInputAction.done),
                                 SizedBox(height: 37.v),
                                 CustomElevatedButton(
-                                    width: 114.h, text: "lbl_login".tr),
+                                    width: 114.h,
+                                    text: "lbl_login".tr,
+                                    onTap: () {
+                                      signInUsingGoogle();
+                                    }),
                                 SizedBox(height: 44.v),
                                 CustomElevatedButton(
                                     height: 30.v,
@@ -92,12 +100,18 @@ class SigninScreen extends GetWidget<SigninController> {
                                           imagePath: ImageConstant.imgGoogle,
                                           height: 27.adaptSize,
                                           width: 27.adaptSize,
-                                          margin: EdgeInsets.only(bottom: 4.v)),
+                                          margin: EdgeInsets.only(bottom: 4.v),
+                                          onTap: () {
+                                            signInwithGoogle();
+                                          }),
                                       CustomImageView(
                                           imagePath: ImageConstant.imgFacebook,
                                           height: 33.v,
                                           width: 31.h,
-                                          margin: EdgeInsets.only(left: 21.h)),
+                                          margin: EdgeInsets.only(left: 21.h),
+                                          onTap: () {
+                                            signInwithFacebook();
+                                          }),
                                       CustomImageView(
                                           imagePath: ImageConstant.imgLinkedin,
                                           height: 31.v,
@@ -109,6 +123,39 @@ class SigninScreen extends GetWidget<SigninController> {
                     ]))));
   }
 
+  /// Performs a Google sign-in and returns a [GoogleUser] object.
+  ///
+  /// If the sign-in is successful, the [onSuccessGoogleAuthResponse] method is called
+  /// with the [GoogleUser] object as a parameter.
+  /// If the sign-in fails, the [onErrorGoogleAuthResponse] method is called.
+  ///
+  /// Throws an exception if the Google sign-in process fails.
+  signInUsingGoogle() async {
+    await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
+      if (googleUser != null) {
+        onSuccessGoogleAuthResponse(googleUser);
+      } else {
+        onErrorGoogleAuthResponse();
+      }
+    }).catchError((onError) {
+      onErrorGoogleAuthResponse();
+    });
+  }
+
+  /// Displays a snackBar message when the action is triggered.
+  /// The raw snackbar display the specified message `Login Done.` using the Get package.
+  onSuccessGoogleAuthResponse(GoogleSignInAccount googleUser) {
+    Get.rawSnackbar(message: "Login Done.");
+    Get.rawSnackbar(message: "Login Successful");
+  }
+
+  /// Displays a snackBar message when the action is triggered.
+  /// The raw snackbar display the specified message `Error` using the Get package.
+  onErrorGoogleAuthResponse() {
+    Get.rawSnackbar(message: "Error");
+    Get.rawSnackbar(message: "Error");
+  }
+
   /// Navigates to the registrationScreen when the action is triggered.
 
   /// When the action is triggered, this function uses the [Get] package to
@@ -117,5 +164,57 @@ class SigninScreen extends GetWidget<SigninController> {
     Get.toNamed(
       AppRoutes.registrationScreen,
     );
+  }
+
+  /// Performs a Google sign-in and returns a [GoogleUser] object.
+  ///
+  /// If the sign-in is successful, the [onSuccessGoogleAuthResponse] method is called
+  /// with the [GoogleUser] object as a parameter.
+  /// If the sign-in fails, the [onErrorGoogleAuthResponse] method is called.
+  ///
+  /// Throws an exception if the Google sign-in process fails.
+  signInwithGoogle() async {
+    await GoogleAuthHelper().googleSignInProcess().then((googleUser) {
+      if (googleUser != null) {
+        onSuccessGoogleAuthResponse(googleUser);
+      } else {
+        onErrorGoogleAuthResponse();
+      }
+    }).catchError((onError) {
+      onErrorGoogleAuthResponse();
+    });
+  }
+
+  /// Displays a snackBar message when the action is triggered.
+  /// The raw snackbar display the specified message `Login Successful` using the Get package.
+  onSuccessGoogleAuthResponse(GoogleSignInAccount googleUser) {
+    Get.rawSnackbar(message: "Login Successful");
+  }
+
+  /// Performs a Facebook sign-in and returns a [FacebookUser] object.
+  ///
+  /// If the sign-in is successful, the [onSuccessFacebookAuthResponse] method is called
+  /// with the [FacebookUser] object as a parameter.
+  /// If the sign-in fails, the [onErrorFacebookAuthResponse] method is called.
+  ///
+  /// Throws an exception if the Facebook sign-in process fails.
+  signInwithFacebook() async {
+    await FacebookAuthHelper().facebookSignInProcess().then((facebookUser) {
+      onSuccessFacebookAuthResponse(facebookUser);
+    }).catchError((onError) {
+      onErrorFacebookAuthResponse();
+    });
+  }
+
+  /// Displays a snackBar message when the action is triggered.
+  /// The raw snackbar display the specified message `Login Success` using the Get package.
+  onSuccessFacebookAuthResponse(FacebookUser facebookUser) {
+    Get.rawSnackbar(message: "Login Success");
+  }
+
+  /// Displays a snackBar message when the action is triggered.
+  /// The raw snackbar display the specified message `Error` using the Get package.
+  onErrorFacebookAuthResponse() {
+    Get.rawSnackbar(message: "Error");
   }
 }
